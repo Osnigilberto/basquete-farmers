@@ -28,6 +28,13 @@ npm run dev
 | `/apoie` | Patrocínio, sócio apoiador, voluntariado, PIX |
 | `/inscricao` | Pré-inscrição enviada pelo WhatsApp (com consentimento LGPD) |
 
+## Publicação
+
+- Produção: https://antonio-carlos-farmers.vercel.app
+- Repositório: https://github.com/Osnigilberto/basquete-farmers (branch `main`)
+- Todo push na `main` publica sozinho na Vercel (projeto `antonio-carlos-farmers`, pasta raiz `site`).
+- Pelo celular: edite no app do GitHub ou peça ao Claude em claude.ai/code neste repositório.
+
 ## Próximas fases
 
 - Fase 2: transparência (prestação de contas), notícias/agenda com painel admin, galeria.
