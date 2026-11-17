@@ -1,0 +1,234 @@
+/* Paleta oficial — medida dos logos (modelo2) */
+:root {
+  --verde: #0e3a1e;
+  --verde-escuro: #082714;
+  --verde-medio: #17502c;
+  --folha: #1f8a3a;
+  --creme: #f3ebdd;
+  --creme-claro: #faf6ef;
+  --vermelho: #d7080a;
+  --vermelho-escuro: #a80607;
+  --caramelo: #bc7b3d;
+
+  --texto: #13201a;
+  --texto-suave: #4d5a52;
+
+  --font-sans: var(--font-inter), system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --font-display: var(--font-barlow), 'Arial Narrow', sans-serif;
+
+  --raio: 14px;
+  --sombra: 0 10px 30px rgb(8 39 20 / 0.12);
+  --largura: 1120px;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+/* Toque: sem flash azul no Android/iOS e alvos de no mínimo 44px */
+a,
+button,
+input,
+select,
+textarea,
+label {
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* iOS dá zoom em campos com fonte < 16px; padroniza aparência entre sistemas */
+input,
+select,
+textarea {
+  font-size: 16px !important;
+  -webkit-appearance: none;
+  appearance: none;
+  border-radius: 10px;
+}
+
+input[type='checkbox'] {
+  -webkit-appearance: auto;
+  appearance: auto;
+}
+
+input[type='date'] {
+  min-height: 48px;
+  display: flex;
+  align-items: center;
+}
+
+input[type='date']::-webkit-date-and-time-value {
+  text-align: left;
+}
+
+select {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8'%3E%3Cpath d='M1 1l5 5 5-5' fill='none' stroke='%230e3a1e' stroke-width='2'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 14px center;
+  padding-right: 38px !important;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-sans);
+  color: var(--texto);
+  background: var(--creme-claro);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+a {
+  color: inherit;
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--font-display);
+  font-weight: 800;
+  line-height: 1.05;
+  text-transform: uppercase;
+  letter-spacing: 0.01em;
+  margin: 0 0 0.5em;
+}
+
+h1 { font-size: clamp(2.6rem, 7vw, 4.75rem); }
+h2 { font-size: clamp(2rem, 4.5vw, 3rem); }
+h3 { font-size: 1.5rem; }
+
+p { margin: 0 0 1em; }
+
+.container {
+  width: 100%;
+  max-width: var(--largura);
+  margin: 0 auto;
+  padding: 0 max(20px, env(safe-area-inset-right)) 0 max(20px, env(safe-area-inset-left));
+}
+
+.btn {
+  min-height: 48px;
+  text-align: center;
+  line-height: 1.15;
+}
+
+@media (max-width: 600px) {
+  .container {
+    padding-left: max(16px, env(safe-area-inset-left));
+    padding-right: max(16px, env(safe-area-inset-right));
+  }
+}
+
+.secao {
+  padding: clamp(56px, 9vw, 104px) 0;
+}
+
+.secao-escura {
+  background: var(--verde);
+  color: var(--creme);
+}
+
+.secao-creme {
+  background: var(--creme);
+}
+
+.rotulo {
+  display: inline-block;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 0.95rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--vermelho);
+  margin-bottom: 0.75rem;
+}
+
+.secao-escura .rotulo {
+  color: var(--caramelo);
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.85rem 1.6rem;
+  border-radius: 999px;
+  border: 2px solid transparent;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.1rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  text-decoration: none;
+  cursor: pointer;
+  transition: transform 0.15s ease, background 0.15s ease, color 0.15s ease;
+}
+
+.btn:hover { transform: translateY(-2px); }
+
+.btn-vermelho {
+  background: var(--vermelho);
+  color: #fff;
+}
+.btn-vermelho:hover { background: var(--vermelho-escuro); }
+
+.btn-contorno {
+  border-color: currentColor;
+  background: transparent;
+}
+
+.btn-verde {
+  background: var(--verde);
+  color: var(--creme);
+}
+.btn-verde:hover { background: var(--verde-medio); }
+
+.btn[aria-disabled='true'] {
+  opacity: 0.55;
+  pointer-events: none;
+}
+
+.faixa-tricolor {
+  height: 8px;
+  background: linear-gradient(
+    to right,
+    var(--verde) 0 33.33%,
+    var(--creme) 33.33% 66.66%,
+    var(--vermelho) 66.66% 100%
+  );
+}
+
+:focus-visible {
+  outline: 3px solid var(--caramelo);
+  outline-offset: 3px;
+}
+
+/* Nunca deixar a página rolar para os lados no celular */
+html,
+body {
+  overflow-x: clip;
+  max-width: 100%;
+}
+
+/* Palavras longas (ex.: PATROCINADORA) quebram em vez de alargar a coluna */
+h1,
+h2,
+h3,
+p,
+li,
+dd {
+  overflow-wrap: break-word;
+  hyphens: auto;
+}

@@ -1,0 +1,112 @@
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: rgb(14 58 30 / 0.96);
+  backdrop-filter: blur(8px);
+  color: var(--creme);
+  border-bottom: 3px solid var(--vermelho);
+  padding-top: env(safe-area-inset-top);
+}
+
+.inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 68px;
+}
+
+.marca {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 1.6rem;
+  text-transform: uppercase;
+  line-height: 0.9;
+}
+
+.marca small {
+  display: block;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  color: var(--caramelo);
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+}
+
+.nav a:not(:global(.btn)) {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.1rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  opacity: 0.85;
+  padding: 4px 0;
+  border-bottom: 2px solid transparent;
+}
+
+.nav a:not(:global(.btn)):hover,
+.nav a[aria-current='page'] {
+  opacity: 1;
+  border-bottom-color: var(--vermelho);
+}
+
+.nav :global(.btn) {
+  padding: 0.55rem 1.2rem;
+  font-size: 1rem;
+}
+
+.toggle {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: 0;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.toggle span {
+  width: 24px;
+  height: 2px;
+  background: var(--creme);
+  border-radius: 2px;
+}
+
+@media (max-width: 760px) {
+  .toggle { display: flex; }
+
+  .nav {
+    display: none;
+    position: absolute;
+    top: 100%;
+    max-height: calc(100dvh - 100%);
+    overflow-y: auto;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    padding: 8px 20px 20px;
+    background: var(--verde);
+    border-bottom: 3px solid var(--vermelho);
+  }
+
+  .nav.aberto { display: flex; }
+
+  .nav a:not(:global(.btn)) {
+    padding: 14px 0;
+    border-bottom: 1px solid rgb(243 235 221 / 0.12);
+  }
+
+  .nav :global(.btn) { margin-top: 16px; }
+}

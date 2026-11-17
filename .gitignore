@@ -1,0 +1,14 @@
+node_modules/
+.next/
+.vercel/
+*.log
+.env*
+!.env.example
+
+# backups locais das imagens antes da correção de cor
+_backup_vermelho_antigo/
+
+# gerado pelo script do uniforme
+imagens/fonte/uniforme.html
+
+.claude/settings.local.json
