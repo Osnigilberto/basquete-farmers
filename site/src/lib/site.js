@@ -9,7 +9,7 @@ export const site = {
   slogan: 'Basquete que planta futuro.',
   descricao:
     'Projeto social de basquete em Antônio Carlos, Santa Catarina. Esporte, disciplina e comunidade para crianças, jovens e adultos.',
-  url: 'https://farmers.org.br', // trocar quando o domínio for registrado
+  url: 'https://antonio-carlos-farmers.vercel.app', // trocar quando o domínio próprio for registrado
 
   contato: {
     // Número no formato internacional, só dígitos. Ex.: '5548999999999'
